@@ -15,7 +15,7 @@ import fr.eni.javaee.exception.GeneralException;
 
 public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
-	private static final String INSERT = "INSERT INTO UTILISATEURS(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe) VALUES (?,?,?,?,?,?,?,?,?);";
+	private static final String INSERT = "INSERT INTO UTILISATEURS(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?);";
 	private static final String SELECT_CONNEXION = "SELECT no_utilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur FROM UTILISATEURS WHERE (pseudo=? and mot_de_passe =?) or(email=? and mot_de_passe=?);";
 	private static final String SELECT_BY_PSEUDO = "SELECT no_utilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur FROM UTILISATEURS WHERE pseudo=?";
 	private static final String DELETE = "DELETE FROM UTILISATEURS WHERE no_utilisateur=?;";
@@ -23,10 +23,10 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
 	@Override
 	public void insert(Utilisateur utilisateur) throws GeneralException {
-		Connection cnx = null;
+		  
 		GeneralException be = new GeneralException();
-		try {
-			cnx = ConnectionProvider.getConnection();
+		try 
+			(Connection cnx = ConnectionProvider.getConnection()){
 			// Pour prendre la main sur la transaction
 			PreparedStatement psmt = cnx.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
 			psmt.setString(1, utilisateur.getPseudo());
@@ -38,18 +38,17 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			psmt.setString(7, utilisateur.getCodePostal());
 			psmt.setString(8, utilisateur.getVille());
 			psmt.setString(9, utilisateur.getMotDePasse());
+			psmt.setInt(10, utilisateur.getCredit());
+			psmt.setBoolean(11, utilisateur.isAdministrateur());
 			psmt.executeUpdate();
 			psmt.close();
-
+			cnx.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 			be.ajouterErreur(CodesResultatDAL.INSERT_USER_ECHEC);
+			
 		} finally {
-			try {
-				cnx.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			
 			if (be.hasErreurs()) {
 				throw be;
 			}

@@ -10,4 +10,9 @@ public class UtilisateurManager {
 		return null;
 	}
 
+	public void modifierUtilisateur(Utilisateur utilisateur) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.eni.javaee.bo.Utilisateur;
+import fr.eni.javaee.exception.GeneralException;
+import fr.eni.javaee.jdbc.UtilisateurDAOJdbcImpl;
+
 /**
  * Servlet implementation class ServletInscription
  */
@@ -32,21 +36,38 @@ public class ServletInscription extends HttpServlet {
 		
 		String nom = request.getParameter("nom");
 		request.setAttribute("nom", nom);
-		String prenom = request.getParameter("prénom");
-		request.setAttribute("prénom",prenom);
+		String prenom = request.getParameter("prenom");
+		request.setAttribute("prenom",prenom);
 		String pseudo = request.getParameter("pseudo");
 		request.setAttribute("pseudo", pseudo);
 		String rue = request.getParameter("rue");
 		request.setAttribute("rue", rue);
-		String ville = request.getParameter("Ville");
-		request.setAttribute("Ville", ville);
-		String codePostale = request.getParameter("Code postale");
-		request.setAttribute("Code Postale", codePostale);
-		String email = request.getParameter("Email");
-		request.setAttribute("Email", email);
+		String ville = request.getParameter("ville");
+		request.setAttribute("ville", ville);
+		String codePostale = request.getParameter("code-postale");
+		request.setAttribute("code-postale", codePostale);
+		String email = request.getParameter("email");
+		request.setAttribute("email", email);
+		String tel = request.getParameter("telephone");
+		request.setAttribute("telephone", tel);
+		String motDePasse = request.getParameter("password");
+		request.setAttribute("password", motDePasse);
+		
+		
+		Utilisateur utilisateur = new Utilisateur( pseudo, nom, prenom,  email,  tel,
+				 rue,  codePostale,  ville,  motDePasse);
+		UtilisateurDAOJdbcImpl utilisateurDAOJdbcImpl = new UtilisateurDAOJdbcImpl();
+		try {
+			utilisateurDAOJdbcImpl.insert(utilisateur);
+		} catch (GeneralException e) {
+			e.printStackTrace();
+		}
+		
 		
 		RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/WEB-INF/JSP/Inscription.jsp");
 		 rd.forward(request, response);
+		 
+		 
 	
 	}
 

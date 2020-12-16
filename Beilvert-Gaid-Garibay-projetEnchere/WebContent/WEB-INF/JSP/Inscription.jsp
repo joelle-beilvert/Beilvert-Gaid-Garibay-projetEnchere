@@ -14,15 +14,16 @@
 <body>
 	
 
-	<form method="post" action="formulaireInscription">
+	<form method="post" action="ServletInscription">
 
 		<header>
 			<strong>Eni-Encheres</strong>
 		</header>
-		<br> <img
-			src="${pageContext.request.contextPath}/images/encheres.jpg"
+		<br> 
+		<a href="http://localhost:8080/Beilvert-Gaid-Garibay-projetEnchere/Connexion">
+		<img src="${pageContext.request.contextPath}/images/encheres.jpg"
 			alt="logo" height="130px" width="150px" />
-
+	</a>
 		<h2>
 			<center>Bienvenue sur le site ENI-Encheres</center>
 		</h2>
@@ -63,24 +64,24 @@
 		</p>
 		<p>
 			<label for="telephone">Telephone: </label><br> 
-			<input  type="tel" id="telephone" placeholder="06xxxxxxxx" pattern="06[0-9]{8}"> 
+			<input style="text-align: center" type="tel" id="telephone" name="telephone"placeholder="06xxxxxxxx" pattern="06[0-9]{8}"> 
 		</p>
 		<br><br>
 		<p>
 			<label for="email">Email:
 				<title="required"><em>*</em></label><br>
-				<input type="email" id="email" name="usermail">
+				<input style="text-align: center" type="email" id="email" name="email">
 			 <br><br>
 		</p>
 		<p>
 			<label for="password" motDePasse>Mot de passe:
 				<title="required"><em>*</em></label><br> 
-				<input type="password" id="pwd" name="password">
+				<input style="text-align: center" type="password" id="password" name="password">
 			 <br><br>
 			<U><strong>Adresse:</strong></strong></U><br><br>
-			<label>Rue: </label><br><input id="rue" name="rue" type="text"/><br><br>
-			<label>Code postale: </label><br><input id="code-postale" name="code-postale" type="text" /><br><br>
-			<label>Ville: </label><br><input id="ville" type="text"/><br><br>
+			<label>Rue: </label><br><input style="text-align: center"id="rue" name="rue" type="text"/><br><br>
+			<label>Code postale: </label><br><input style="text-align: center" id="code-postale" name="code-postale" type="text" /><br><br>
+			<label>Ville: </label><br><input style="text-align: center" id="ville"name="ville" type="text"/><br><br>
  			
 			
 		</p>

@@ -16,7 +16,7 @@ public class Utilisateur implements Serializable {
 	private String codePostal;
 	private String ville;
 	private String motDePasse;
-	private int credit;
+	private int credit=0;
 	private boolean administrateur;
 	private List<ArticleVendu> listeVente;
 	private List<ArticleVendu> listeAchat;
@@ -25,6 +25,7 @@ public class Utilisateur implements Serializable {
 
 	
 	public Utilisateur() {
+		this.administrateur= false;
 		this.listeEnchere = new ArrayList<Enchere>();
 		this.listeAchat = new ArrayList<ArticleVendu>();
 		this.listeVente = new ArrayList<ArticleVendu>();
