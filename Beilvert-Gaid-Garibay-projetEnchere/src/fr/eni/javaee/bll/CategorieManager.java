@@ -1,6 +1,8 @@
-package fr.eni.javaee.servlets;
+package fr.eni.javaee.bll;
 
 import java.util.List;
+
+import fr.eni.javaee.bo.Categorie;
 
 public class CategorieManager {
 

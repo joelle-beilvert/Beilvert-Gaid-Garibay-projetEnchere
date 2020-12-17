@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import fr.eni.javaee.servlets.CategorieManager;
-import fr.eni.javaee.servlets.EnchereManager;
-import fr.eni.javaee.servlets.Categorie;
+import fr.eni.javaee.bll.CategorieManager;
+import fr.eni.javaee.bll.EnchereManager;
+import fr.eni.javaee.bo.Categorie;
 import fr.eni.javaee.bo.Enchere;
 import fr.eni.javaee.bo.Utilisateur;
 import fr.eni.javaee.exception.GeneralException;

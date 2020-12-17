@@ -10,5 +10,7 @@ public abstract class CodesResultatDAL {
 	public static final int SELECT_MAX_ENCHERE_ECHEC = 10006;
 	public static final int SELECT_VENTE_REMPORTE_ECHEC = 10007;
 	public static final int SELECT_ENCHERES = 10008;
+	public static final int INSERT_CATEGORIE_ECHEC = 10009;
+	public static final int SELECT_CATEGORIE_ECHEC = 10010;
 
 }

@@ -62,11 +62,14 @@ public class Login extends HttpServlet {
 
 		if (utilisateurTest==null) {
 			request.setAttribute("errorLogin", "Erreur de saisie Login / MDP, veuillez réessayer");
-			RequestDispatcher rd = request.getRequestDispatcher("connexion");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/SeConnecter.jsp");
 			rd.forward(request, response);
 		} else {
 			utilisateur = utilisateurTest;
-			doGet(request, response);
+			HttpSession session = request.getSession();
+			session.setAttribute("utilisateur", utilisateur);
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/AccueilUtilisateur.jsp");
+			rd.forward(request, response);
 		}
 	}
 }

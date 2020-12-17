@@ -1,4 +1,4 @@
-package fr.eni.javaee.servlets;
+package fr.eni.javaee.bll;
 
 import java.util.List;
 
@@ -27,6 +27,26 @@ public class EnchereManager {
 	}
 
 	public List<Enchere> selectMesVentesTerminees(String categorieStr, String recherche, int noUtilisateur) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Enchere selectByUtilisateur(int noUtilisateur, int noArticle) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void ajouterEnchere(Enchere enchereEnCours) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void updateEnchere(Enchere enchereEnCours) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Enchere select(int noArticle) {
 		// TODO Auto-generated method stub
 		return null;
 	}

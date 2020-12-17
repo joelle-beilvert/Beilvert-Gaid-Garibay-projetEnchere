@@ -2,6 +2,8 @@ package fr.eni.javaee.servlets;
 
 import java.util.List;
 
+import fr.eni.javaee.bo.Categorie;
+
 public class Retrait {
 
 	public Retrait(String rue, String codePostal, String ville) {

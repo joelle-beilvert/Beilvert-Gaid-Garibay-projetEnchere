@@ -15,12 +15,14 @@
 <body>
 
 <fieldset class="vendre">
-	
-	<p><a href="http://localhost:8080/Beilvert-Gaid-Garibay-projetEnchere/Connexion">
+	<div>
+					<a href="http://localhost:8080/Beilvert-Gaid-Garibay-projetEnchere/Connexion">
 					<img src="${pageContext.request.contextPath}/images/encheres.jpg"
 					alt="logo" height="80px" width="70px" style="float:left;margin-left:20px"/>
+					</a>
+					</div>
 					<h2><center>Vendre son objet</center></h2>
-					</p>	
+						
 	<div class="container-fluid">
 		
 
@@ -33,14 +35,24 @@
 				</div>
 			</div>
 		</c:if>
-			<form action="vendreArticle" method="post">
+			<form action="Vendre" method="post">
 				<div>
 					<label for="nom">Article :</label>
 					<input type="text" placeholder="Entrer le nom de l'article" id="nom" name="nom" size="30" required>
 				</div>
 				<div>
-					<label for="categorie">Catégorie :</label> 
-					<select name="noCategorie">
+					<label for="categorie">Catégorie :</label>
+					 <div>  
+   					 <select name="noCategorie">
+
+					<option>Informatique</option>
+					<option selected="yes">Toutes</option>
+					<option>Vetement</option>
+					<option>Ameublement</option>
+					<option>Sports et Loisirs</option>
+					</select>
+					</div> 
+					
 						<c:forEach var="categorie" items="${listeCategorie}">
 							<c:choose>
 								<c:when
@@ -91,7 +103,7 @@
 					</div>
 
 					<div>
-					<button id="enregistrer" name="enregistrer">Enregistrer</button>
+					<button type="submit" id="enregistrer" name="enregistrer">Enregistrer</button>
 					
 						<a id="annulerVente"
 							href="accueil" class="btn btn-primary">Annuler</a>

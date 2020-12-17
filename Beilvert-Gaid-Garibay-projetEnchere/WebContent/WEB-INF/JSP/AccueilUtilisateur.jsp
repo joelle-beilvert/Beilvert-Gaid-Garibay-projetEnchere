@@ -14,18 +14,14 @@
 					</p>
 <center><h1>Liste des Encheres</h1></center>
 
-<div style="text-align:right">
-<a href="http://localhost:8080/Beilvert-Gaid-Garibay-projetEnchere/formulaireInscription"> S'inscrire</a>
 
-<a href="http://localhost:8080/Beilvert-Gaid-Garibay-projetEnchere/seConnecter"> Se connecter</a>
-</div>
 <div class="col-lg-12 col-sm-12 d-flex justify-content-around">
-				<a href="vendreArticle">Vendre un article</a> <a href="profil">Mon
+				<a href="Vendre">Vendre un article</a> <a href="profil">Mon
 					profil</a> <a href="logout">Déconnexion</a>
 
 </div>
 <div class="col-lg-6 col-sm-12">
-				<p>${utilisateur.pseudo} est connecté(e)</p>
+				<p>${sessionScope.utilisateur.pseudo} est connecté(e)</p>
 			</div>
 					
 					<p>Achats</p>
@@ -39,7 +35,7 @@
 					<input type="radio" id="ventesTerminees" name="filtre" value="ventesTerminees"> <label for="ventesTerminees">ventes terminées</label> 
 			
 			
-			
+		
 			<br> 
 			<input class="col-lg-2 col-sm-6" type="text" placeholder="Recherche" id="nomArticleContient" name="Recherche"> 
 			
@@ -69,7 +65,7 @@
 
 <div style="width: 450px;margin-left:34% ; padding-top:5px; padding-bottom:20px;border: 3px solid #A0A0A0; text-align: left;background: #C0C0C0;border-radius: 10px;"> 
 <p class="flotte">
-<img src="ordigaming.jpg"
+<img src="${pageContext.request.contextPath}/images/ordi.jpg"
      width= 140px;
      height= 140px;/>
 </p>
@@ -89,7 +85,7 @@
 
 <div style="width: 450px;margin-left:34% ; padding-top:5px; padding-bottom:20px;border: 3px solid #A0A0A0; text-align: left;background: #C0C0C0;border-radius: 10px;"> 
 <p class="flotte">
-<img src="vtt.jpg"
+<img src="${pageContext.request.contextPath}/images/velo.jpg"
      width= 140px;
      height= 140px;/>   
 </p>
@@ -106,7 +102,7 @@
 <br>
  <div style="width: 450px; margin-left:34%;  padding-top:5px; padding-bottom:20px;border: 3px solid #A0A0A0; text-align: left;background: #C0C0C0;border-radius: 10px;"> 
 <p class="flotte">
-<img src="basket.jpg"
+<img src="${pageContext.request.contextPath}/images/baskets.jpg"
      width= 140px;
      height= 140px;/>   
 </p>
@@ -123,7 +119,7 @@
 <br>
 <div style="width: 450px; margin-left:34%;  padding-top:5px; padding-bottom:20px;border: 3px solid #A0A0A0; text-align: left;background: #C0C0C0;border-radius: 10px;"> 
 <p class="flotte">
-<img src="TV.jpg"
+<img src="${pageContext.request.contextPath}/images/TV.jpg"
      width= 140px;
      height= 140px;/>   
 </p>

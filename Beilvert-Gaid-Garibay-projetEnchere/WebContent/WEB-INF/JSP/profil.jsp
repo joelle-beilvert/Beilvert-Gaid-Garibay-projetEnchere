@@ -26,7 +26,7 @@
 		</c:if>
 		<div class="col-lg-6 col-sm-12">
 	
-			<h3 class="my-4 col-lg-12 col-sm-12">${utilisateur.pseudo}</h3>
+			<h3 class="my-4 col-lg-12 col-sm-12">${sessionScope.utilisateur.pseudo}</h3>
 	
 	 
           

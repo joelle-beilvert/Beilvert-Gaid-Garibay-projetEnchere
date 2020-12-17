@@ -20,12 +20,12 @@ href="${pageContext.request.contextPath}/ficheInscription.css">
  	<header>
  	</header>
  		
- 		<form action="#" methop="post">
+ 		<form action="#" method="post">
  		
  			<input type="text" name="username" placeholder="Login" required="required">
  			<input type="password" name="password" placeholder="Mot de passe" required="required">
- 			<button type="submit" class="button-connexion">Connexion</button>
- 			
+ 		<p><button><a  type="submit" class="button-connexion">Connexion</a>
+ 			</button></p>
  		</form>
  	</div>
  </section>

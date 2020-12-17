@@ -8,17 +8,17 @@
 <body class="page">
   
 <h2>ENI-ENCHERES</h2>
-<a href="http://localhost:8080/Beilvert-Gaid-Garibay-projetEnchere/Connexion">
+
 		<img src="${pageContext.request.contextPath}/images/encheres.jpg"
 			alt="logo" height="100px" width="90px" />
 <center><h1>Liste des Encheres</h1></center>
 
 			
 <div style="text-align:right">
-<a href="http://localhost:8080/Beilvert-Gaid-Garibay-projetEnchere/formulaireInscription"> S'inscrire</a>
+<a href="http://localhost:8080/Beilvert-Gaid-Garibay-projetEnchere/ServletInscription"> S'inscrire</a>
 </div>
 <div style="text-align:right">
-<a href="http://localhost:8080/Beilvert-Gaid-Garibay-projetEnchere/seConnecter"> Se connecter</a>
+<a href="http://localhost:8080/Beilvert-Gaid-Garibay-projetEnchere/Login"> Se connecter</a>
 
 
 
